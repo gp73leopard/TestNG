@@ -7,8 +7,8 @@ public class NegativeCalculatorTest extends Assert{
     private Calculator calc = new Calculator();
 
     @DataProvider
-    public Object[][] negativeData() {
-        return new Object[][]{
+  public Object[][] negativeData() {
+       return new String[][]{
                 {"/", "7", "0"},
                 {"/", "-1.1", "-0.0"},
                 {"7", "9", "3"},
@@ -22,6 +22,8 @@ public class NegativeCalculatorTest extends Assert{
 
         };
     }
+
+
 
     @Test(dataProvider = "negativeData")
     public void negativeTest(String[] str) {
