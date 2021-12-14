@@ -24,8 +24,12 @@ public class NegativeCalculatorTest extends Assert{
     }
 
     @Test(dataProvider = "negativeData")
-    public void negativeTest(String[] str) {
-
+    public void negativeTest(String a, String b, String c) {
+        String[] str ={
+                a,
+                b,
+                c,
+        };
         calc.execute(str);
     }
 }
