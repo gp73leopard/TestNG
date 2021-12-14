@@ -10,28 +10,12 @@ public class Calculator {
             if (params[1] == null || params[2] == null) {
                 return "Одно из значений явлется пустым полем";
             }
-        }
-        catch (CalculatorException ex) {
-            throw new CalculatorException("Неверный ввод данных");
-        }
-       if (params[1] == null || params[2] == null) {
-            throw new CalculatorException("Одно из значений явлется пустым полем");
-        }
-        try {
-            Double.parseDouble(params[1]);
-        }catch (CalculatorException e){
-            throw new CalculatorException("Одно из значений явлется пустым полем");
-        }catch (NumberFormatException e){
-            return "Неверный ввод данных";
-        }
 
-        try {
-            Double.parseDouble(params[2]);
-        }catch (CalculatorException e){
-            throw new CalculatorException("Одно из значений явлется пустым полем");
-        }catch (NumberFormatException e){
-            return "Неверный ввод данных";
-        }
+
+
+       Double.parseDouble(params[1]);
+       Double.parseDouble(params[2]);
+
 
         a = Double.parseDouble(params[1]);
         b = Double.parseDouble(params[2]);
@@ -72,7 +56,7 @@ public class Calculator {
             throw new CalculatorException("Неверный ввод данных");
         }*/
 //
-            try {
+
                 double c = a+b;
                 double c1 = a - b;
                 double c2= a / b;
@@ -89,7 +73,10 @@ public class Calculator {
                     return "Неверный ввод данных";
                 }
 
-            } catch (CalculatorException ex) {
+            } catch (NumberFormatException ex) {
+                return "dfds";
+            }
+            catch (CalculatorException ex){
                 throw new CalculatorException("Неверный ввод данных");
             }
 
