@@ -24,6 +24,6 @@ public class PositiveCalculatorT extends Assert{
     public void positiveTest(String[] str) {
 
 
-        assertEquals(str[3], calc.execute(str));
+        assertEquals(Double.parseDouble(str[3]), Double.parseDouble(calc.execute(str)));
     }
 }
