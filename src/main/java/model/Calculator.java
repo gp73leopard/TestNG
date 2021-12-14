@@ -13,12 +13,12 @@ public class Calculator {
         try {
             Double.parseDouble(params[1]);
         }catch (NumberFormatException e){
-            throw new NumberFormatException("Неверный ввод данных");
+            return "Неверный ввод данных";
         }
         try {
             Double.parseDouble(params[2]);
         }catch (NumberFormatException e){
-            throw new NumberFormatException("Неверный ввод данных");
+            return "Неверный ввод данных";
         }
 
         a = Double.parseDouble(params[1]);

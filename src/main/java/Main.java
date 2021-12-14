@@ -8,9 +8,9 @@ public class Main {
     public static void mainTest(){
         String[] str = {
                 "/",
-                "2",
-                "1",
-                "2"
+                "25",
+                "5",
+                "5"
         };
         System.out.println(Calculator.execute(str));
     }
