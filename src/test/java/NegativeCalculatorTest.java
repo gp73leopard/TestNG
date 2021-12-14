@@ -1,3 +1,4 @@
+import model.Calculator;
 import org.testng.Assert;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
@@ -17,12 +18,8 @@ public class NegativeCalculatorTest extends Assert{
     }
 
     @Test(dataProvider = "negativeData")
-    public void negativeTest(String first, String second, String third) {
-        String[] str ={
-                first,
-                second,
-                third,
-        };
+    public void negativeTest(String[] str) {
+
         calc.execute(str);
     }
 }

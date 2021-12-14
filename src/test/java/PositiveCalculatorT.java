@@ -1,6 +1,7 @@
+import model.Calculator;
 import org.testng.Assert;
-import org.testng.annotations.*;
-import java.lang.String;
+import org.testng.annotations.DataProvider;
+import org.testng.annotations.Test;
 
 public class PositiveCalculatorT extends Assert{
 
@@ -18,12 +19,9 @@ public class PositiveCalculatorT extends Assert{
     }
 
     @Test(dataProvider = "positiveData")
-    public void positiveTest(String first, String second, String third, String rezult) {
-        String[] str ={
-                first,
-                second,
-                third,
-        };
-        assertEquals(rezult, calc.execute(str));
+    public void positiveTest(String[] str) {
+
+
+        assertEquals(str[3], calc.execute(str));
     }
 }
