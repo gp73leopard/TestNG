@@ -30,7 +30,7 @@ public class NegativeCalculatorTest extends Assert{
             calc.execute(str);
         }
         catch (CalculatorException e){
-            throw new CalculatorException("Неверный ввод данных");
+           System.out.println("Неверный ввод данных");
         }
     }
 }
