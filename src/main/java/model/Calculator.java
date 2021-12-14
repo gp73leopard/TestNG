@@ -2,25 +2,26 @@ package model;
 
 public class Calculator {
     public static String execute(String[] params) {
-        double a= 0.0;
-        double b= 0.0;
+
+        double a;
+        double b;
 
 
         if (params[1] == null || params[2] == null) {
-            throw new CalculatorException("Неверный ввод данных");
+            throw new CalculatorException("Одно из значений явлется пустым полем");
         }
         try {
             Double.parseDouble(params[1]);
         }catch (NumberFormatException e){
-
-            throw new CalculatorException("Неверный ввод данных");
+            throw new CalculatorException("Первое значение не может быть преобразовано в double");
         }
         try {
             Double.parseDouble(params[2]);
         }catch (NumberFormatException e){
 
-            throw new CalculatorException("Неверный ввод данных");
+            throw new CalculatorException("Второе значение не может быть преобразовано в double");
         }
+
         a = Double.parseDouble(params[1]);
         b = Double.parseDouble(params[2]);
 
@@ -65,13 +66,13 @@ public class Calculator {
                 double c1 = a - b;
                 double c2= a / b;
                 double c3 = a * b;
-                if (params[0] == "/" && b != 0 && c >= -2147483648 && c <= 2147483647  && params[1] != null && params[2] != null) {
+                if (params[0] == "/" && b != 0 && c >= -2147483648 && c <= 2147483647) {
                     return Double.toString(c2);
-                } else if (params[0] == "+" && b != 0 && c <= 2147483647 && c >= -2147483648  && params[1] != null && params[2] != null) {
+                } else if (params[0] == "+" && b != 0 && c <= 2147483647 && c >= -2147483648) {
                     return Double.toString(c);
-                } else if (params[0] == "-" && b != 0 && c >= -2147483648 && c <= 2147483647  && params[1] != null && params[2] != null) {
+                } else if (params[0] == "-" && b != 0 && c >= -2147483648 && c <= 2147483647) {
                     return Double.toString(c1);
-                } else if (params[0] == "*" && b != 0 && c >= -2147483648 && c <= 2147483647  && params[1] != null && params[2] != null) {
+                } else if (params[0] == "*" && b != 0 && c >= -2147483648 && c <= 2147483647) {
                     return Double.toString(c3);
                 } else {
                     throw new CalculatorException("Неверный ввод данных");

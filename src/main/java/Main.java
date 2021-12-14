@@ -9,9 +9,9 @@ public class Main {
         String[] str = {
                 "/",
                 "2",
-                "1",
+                "0",
                 "2"
         };
-        Calculator.execute(str);
+        System.out.println(Calculator.execute(str));
     }
 }
