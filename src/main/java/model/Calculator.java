@@ -6,17 +6,29 @@ public class Calculator {
         double a;
         double b;
 
-
+        try {
+            if (params[1] == null || params[2] == null) {
+                return "Одно из значений явлется пустым полем";
+            }
+        }
+        catch (CalculatorException ex) {
+            throw new CalculatorException("Неверный ввод данных");
+        }
        if (params[1] == null || params[2] == null) {
             throw new CalculatorException("Одно из значений явлется пустым полем");
         }
         try {
             Double.parseDouble(params[1]);
+        }catch (CalculatorException e){
+            throw new CalculatorException("Одно из значений явлется пустым полем");
         }catch (NumberFormatException e){
             return "Неверный ввод данных";
         }
+
         try {
             Double.parseDouble(params[2]);
+        }catch (CalculatorException e){
+            throw new CalculatorException("Одно из значений явлется пустым полем");
         }catch (NumberFormatException e){
             return "Неверный ввод данных";
         }
@@ -74,7 +86,7 @@ public class Calculator {
                 } else if (params[0] == "*" && b != 0 && c >= -2147483648 && c <= 2147483647) {
                     return Double.toString(c3);
                 } else {
-                    throw new CalculatorException("Неверный ввод данных");
+                    return "Неверный ввод данных";
                 }
 
             } catch (CalculatorException ex) {
