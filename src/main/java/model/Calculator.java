@@ -2,27 +2,31 @@ package model;
 
 public class Calculator {
     public static String execute(String[] params) {
+        double a;
+        double b;
+        double c;
+
         try {
-            double a;
-            double b;
-            double c;
 
-            if(params[1] != null && params[2] !=null) {
-            for (char d : params[1].toCharArray())
-            {
 
-                if (!Character.isDigit(d))
-                    return "Проверка на числовое значение не пройдена";
+            if (params[1] != null && params[2] != null) {
+                for (char d : params[1].toCharArray()) {
+
+                    if (!Character.isDigit(d))
+                        throw new CalculatorException("Неверный ввод данных");
+                }
+            } else {
+                throw new CalculatorException("Неверный ввод данных");
             }
-            }
-            else{
-                return "Проверка на null не пройдена";
-            }
+        }
+        catch (CalculatorException ex){
+            throw new CalculatorException("Неверный ввод данных");
+        }
 
             a = Double.parseDouble(params[1]);
             b = Double.parseDouble(params[2]);
             c = a+b;
-
+            try {
 
             if (params[0] == "/" && b != 0 && c >= -2147483648 && c <= 2147483647  && a == Integer.parseInt(params[1])&& params[1] != null && params[2] != null) {
                 return Double.toString(a / b);
@@ -34,7 +38,7 @@ public class Calculator {
                 return Double.toString(a * b);
             }
             else {
-                return "Не верный ввод данных";
+                throw new CalculatorException("Неверный ввод данных");
             }
 
         }
@@ -43,13 +47,6 @@ public class Calculator {
             throw new CalculatorException("Неверный ввод данных");
         }
 
-        catch (NullPointerException ex){
-            throw new CalculatorException("Неверный ввод данных");
-        }
-
-        catch (ArithmeticException ex){
-            throw new CalculatorException("Неверный ввод данных");
-        }
 
 
     }
