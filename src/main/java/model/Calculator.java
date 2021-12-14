@@ -2,19 +2,54 @@ package model;
 
 public class Calculator {
     public static String execute(String[] params) {
-        double a;
-        double b;
+        double a= 0.0;
+        double b= 0.0;
+
+
+        if (params[1] == null || params[2] == null) {
+            throw new CalculatorException("Неверный ввод данных");
+        }
+        try {
+            Double.parseDouble(params[1]);
+        }catch (NumberFormatException e){
+
+            throw new CalculatorException("Неверный ввод данных");
+        }
+        try {
+            Double.parseDouble(params[2]);
+        }catch (NumberFormatException e){
+
+            throw new CalculatorException("Неверный ввод данных");
+        }
         a = Double.parseDouble(params[1]);
         b = Double.parseDouble(params[2]);
-        try {
 
-            if (params[1] != null && params[2] != null) {
 
+        /*try {
+           if(a/2 < a && b/2 < b)
+           {System.out.println("dasfa");}
+           else{
+               throw new NumberFormatException("Неверный ввод данных");
+           }
+        }
+        catch (CalculatorException ex){
+            throw new CalculatorException("Неверный ввод данных");
+        }
+            /*if (params[1] == null || params[2] == null) {
 
                 for (char d : params[1].toCharArray()) {
 
                     if (Character.isDigit(d))
-                        continue;
+
+                        for (char e : params[2].toCharArray()) {
+
+                            if (Character.isDigit(e))
+                                continue;
+                            }
+                            else{
+                        throw new CalculatorException("Неверный ввод данных");
+                    }
+
                 }
             } else {
                 throw new CalculatorException("Неверный ввод данных");
@@ -23,7 +58,7 @@ public class Calculator {
         }
         catch (CalculatorException ex){
             throw new CalculatorException("Неверный ввод данных");
-        }
+        }*/
 //
             try {
                 double c = a+b;
