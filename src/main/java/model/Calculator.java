@@ -6,15 +6,23 @@ public class Calculator {
         double a;
         double b;
 
-        try {
+
             if (params[1] == null || params[2] == null) {
-                return "Одно из значений явлется пустым полем";
+                throw new CalculatorException("Одно из значений явлется пустым полем");
             }
 
 
+        try{Double.parseDouble(params[1]);}
+        catch (CalculatorException ex){
+            throw new CalculatorException("Первое значение не является числом");
+        }
 
-       Double.parseDouble(params[1]);
-       Double.parseDouble(params[2]);
+        try{Double.parseDouble(params[2]);}
+        catch (CalculatorException ex){
+            throw new CalculatorException("Второе значение не является числом");
+        }
+       /*Double.parseDouble(params[1]);
+       Double.parseDouble(params[2]);*/
 
 
         a = Double.parseDouble(params[1]);
@@ -56,28 +64,29 @@ public class Calculator {
             throw new CalculatorException("Неверный ввод данных");
         }*/
 //
-
-                double c = a+b;
-                double c1 = a - b;
-                double c2= a / b;
-                double c3 = a * b;
-                if (params[0] == "/" && b != 0 && c >= -2147483648 && c <= 2147483647) {
-                    return Double.toString(c2);
-                } else if (params[0] == "+" && b != 0 && c <= 2147483647 && c >= -2147483648) {
-                    return Double.toString(c);
-                } else if (params[0] == "-" && b != 0 && c >= -2147483648 && c <= 2147483647) {
-                    return Double.toString(c1);
-                } else if (params[0] == "*" && b != 0 && c >= -2147483648 && c <= 2147483647) {
-                    return Double.toString(c3);
-                } else {
-                    return "Неверный ввод данных";
-                }
-
-            } catch (NumberFormatException ex) {
-                return "dfds";
+        try {
+            double c = a + b;
+            double c1 = a - b;
+            double c2 = a / b;
+            double c3 = a * b;
+            if (params[0] == "/" && b != 0 && c >= -2147483648 && c <= 2147483647) {
+                return Double.toString(c2);
+            } else if (params[0] == "+" && b != 0 && c <= 2147483647 && c >= -2147483648) {
+                return Double.toString(c);
+            } else if (params[0] == "-" && b != 0 && c >= -2147483648 && c <= 2147483647) {
+                return Double.toString(c1);
+            } else if (params[0] == "*" && b != 0 && c >= -2147483648 && c <= 2147483647) {
+                return Double.toString(c3);
+            } else {
+                return "Неверный ввод данных";
             }
+
+            /*} catch (NumberFormatException ex) {
+                return "dfds";
+            }*/
+        }
             catch (CalculatorException ex){
-                throw new CalculatorException("Неверный ввод данных");
+                throw new CalculatorException("Второе значение не является числом");
             }
 
 

@@ -3,7 +3,7 @@ import org.testng.Assert;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
-public class PositiveCalculatorTest extends Assert{
+public class PositiveCalculatorT extends Assert{
 
     private Calculator calc = new Calculator();
 
