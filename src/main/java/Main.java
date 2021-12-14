@@ -1,13 +1,19 @@
 import model.Calculator;
 
 public class Main {
+    public static void mainTest(String[] str){
+        Calculator.execute(str);
+    }
     public static void main(String[] args){
-        String[] s = {
+        String[] str = {
                 "/",
                 "2",
                 "1",
                 "2"
         };
-        Calculator.execute(s);
+
+        mainTest(str);
+
     }
+
 }
