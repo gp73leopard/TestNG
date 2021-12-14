@@ -1,6 +1,3 @@
-package model;
-
-
 public class Calculator {
     public static String execute(String[] params) {
 
