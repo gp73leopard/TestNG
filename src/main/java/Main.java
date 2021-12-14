@@ -8,8 +8,8 @@ public class Main {
     public static void mainTest(){
         String[] str = {
                 "/",
-                "25",
                 "5",
+                "1",
                 "5"
         };
         System.out.println(Calculator.execute(str));

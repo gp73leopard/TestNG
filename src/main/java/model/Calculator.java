@@ -5,22 +5,50 @@ public class Calculator {
 
         double a;
         double b;
+        /*String aa = params[1];
 
+        String bb = params[2];
+        String cc = params[3];*/
+
+
+
+//           / throw new CalculatorException("Второе значение не является числом");
+       /* try {
+           if(aa == null || bb==null){
+               throw new NullPointerException("null");
+
+           }
+           else {
+               System.out.println("");
+           }
+        }catch (NumberFormatException ex){
+            throw new NumberFormatException("null");
+        }*/
+
+        /*try {
 
             if (params[1] == null || params[2] == null) {
-                throw new CalculatorException("Одно из значений явлется пустым полем");
+                System.out.println("");
             }
+        }
+        catch (NumberFormatException ex){
+            throw new NumberFormatException("null");
+        }*/
+
+
 
 
         try{Double.parseDouble(params[1]);}
-        catch (CalculatorException ex){
+        catch (NumberFormatException ex){
             throw new CalculatorException("Первое значение не является числом");
         }
 
         try{Double.parseDouble(params[2]);}
-        catch (CalculatorException ex){
+        catch (NumberFormatException ex){
             throw new CalculatorException("Второе значение не является числом");
         }
+
+
        /*Double.parseDouble(params[1]);
        Double.parseDouble(params[2]);*/
 
@@ -78,7 +106,7 @@ public class Calculator {
             } else if (params[0] == "*" && b != 0 && c >= -2147483648 && c <= 2147483647) {
                 return Double.toString(c3);
             } else {
-                return "Неверный ввод данных";
+                throw new CalculatorException("Ошибка ввода");
             }
 
             /*} catch (NumberFormatException ex) {
