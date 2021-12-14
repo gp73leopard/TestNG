@@ -7,19 +7,18 @@ public class Calculator {
         double b;
 
 
-        if (params[1] == null || params[2] == null) {
+       if (params[1] == null || params[2] == null) {
             throw new CalculatorException("Одно из значений явлется пустым полем");
         }
         try {
             Double.parseDouble(params[1]);
         }catch (NumberFormatException e){
-            throw new CalculatorException("Первое значение не может быть преобразовано в double");
+            throw new NumberFormatException("Неверный ввод данных");
         }
         try {
             Double.parseDouble(params[2]);
         }catch (NumberFormatException e){
-
-            throw new CalculatorException("Второе значение не может быть преобразовано в double");
+            throw new NumberFormatException("Неверный ввод данных");
         }
 
         a = Double.parseDouble(params[1]);

@@ -9,7 +9,7 @@ public class Main {
         String[] str = {
                 "/",
                 "2",
-                "0",
+                "1",
                 "2"
         };
         System.out.println(Calculator.execute(str));

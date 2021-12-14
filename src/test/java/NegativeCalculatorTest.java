@@ -14,7 +14,7 @@ public class NegativeCalculatorTest extends Assert{
                 {"-", "*", "3"},
                 {"-", "!", "3"},
                 {"/", "1.1", "0"},
-                {"/", "ads", "dsfas"},
+                {"/", "1", "dsfas"},
                 {"+", null, null},
                 {"+", "2547494647", "52"},
                 {"-", "-2147486426", "-42"},
