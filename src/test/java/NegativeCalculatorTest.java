@@ -9,11 +9,17 @@ public class NegativeCalculatorTest extends Assert{
     @DataProvider
     public Object[][] negativeData() {
         return new Object[][]{
-                {"/", "9", "3"},
-                {"!", "9", "3"},
+                {"/", "7", "0"},
+                {"/", "-1.1", "-0.0"},
                 {"7", "9", "3"},
                 {"-", "*", "3"},
                 {"-", "!", "3"},
+                {"/", "1.1", "0"},
+                {"/", "ads", "dsfas"},
+                {"+", null, null},
+                {"+", "2547494647", "52"},
+                {"-", "-2147486426", "-42"},
+
         };
     }
 
