@@ -7,17 +7,17 @@ public class Calculator {
             double b;
             double c;
 
-//            if(params[1] != null && params[2] !=null) {
-//            for (char d : params[1].toCharArray())
-//            {
-//
-//                if (!Character.isDigit(d))
-//                    return "Проверка на числовое значение не пройдена";
-//            }
-//            }
-//            else{
-//                return "Проверка на null не пройдена";
-//            }
+            if(params[1] != null && params[2] !=null) {
+            for (char d : params[1].toCharArray())
+            {
+
+                if (!Character.isDigit(d))
+                    return "Проверка на числовое значение не пройдена";
+            }
+            }
+            else{
+                return "Проверка на null не пройдена";
+            }
 
             a = Double.parseDouble(params[1]);
             b = Double.parseDouble(params[2]);
@@ -40,6 +40,14 @@ public class Calculator {
         }
 
         catch (CalculatorException ex){
+            throw new CalculatorException("Неверный ввод данных");
+        }
+
+        catch (NullPointerException ex){
+            throw new CalculatorException("Неверный ввод данных");
+        }
+
+        catch (ArithmeticException ex){
             throw new CalculatorException("Неверный ввод данных");
         }
 
