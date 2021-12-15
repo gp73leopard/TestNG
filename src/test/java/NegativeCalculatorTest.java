@@ -30,11 +30,7 @@ public class NegativeCalculatorTest extends Assert{
 
         String[] str = {a, b, c};
 
-//        try {
             calc.execute(str);
-//        }
-//        catch (CalculatorException e){
-//            throw new CalculatorException("Введены недопустимые параметры");
-//        }
+
     }
 }

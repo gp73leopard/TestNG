@@ -4,10 +4,9 @@ public class Calculator {
     public static String execute(String[] params) {
 
         // Проверка на null
-        try {if(params[1]==null || params[2]==null) { throw new CalculatorException("");}}
-        catch (NullPointerException ex){
-            throw new CalculatorException("Среди чисел есть пустое поле null");
-        }
+        if(params[1]==null || params[2]==null)
+        { throw new CalculatorException("Среди чисел есть пустое поле null");}
+
         // Проверка на то может ли входной параметр быть преобразован в double
         try{Double.parseDouble(params[1]);}
         catch (NumberFormatException ex){
