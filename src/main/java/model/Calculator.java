@@ -3,120 +3,45 @@ package model;
 public class Calculator {
     public static String execute(String[] params) {
 
-        double a;
-        double b;
-        /*String aa = params[1];
-
-        String bb = params[2];
-        String cc = params[3];*/
-
-
-
-//           / throw new CalculatorException("Второе значение не является числом");
-       /* try {
-           if(aa == null || bb==null){
-               throw new NullPointerException("null");
-
-           }
-           else {
-               System.out.println("");
-           }
-        }catch (NumberFormatException ex){
-            throw new NumberFormatException("null");
-        }*/
-
-        /*try {
-
-            if (params[1] == null || params[2] == null) {
-                System.out.println("");
-            }
+        // Проверка на null
+        try {if(params[1].equals(null) || params[2].equals(null)) { throw new CalculatorException("");}}
+        catch (NullPointerException ex){
+            throw new CalculatorException("Среди чисел есть пустое поле null");
         }
-        catch (NumberFormatException ex){
-            throw new NumberFormatException("null");
-        }*/
-
-
-
-
+        // Проверка на то может ли входной параметр быть преобразован в double
         try{Double.parseDouble(params[1]);}
         catch (NumberFormatException ex){
             throw new CalculatorException("Первое значение не является числом");
         }
-
+        // Аналогичная проверка для второго
         try{Double.parseDouble(params[2]);}
         catch (NumberFormatException ex){
             throw new CalculatorException("Второе значение не является числом");
         }
 
+        double a = Double.parseDouble(params[1]);
+        double b = Double.parseDouble(params[2]);
 
-       /*Double.parseDouble(params[1]);
-       Double.parseDouble(params[2]);*/
-
-
-        a = Double.parseDouble(params[1]);
-        b = Double.parseDouble(params[2]);
-
-
-        /*try {
-           if(a/2 < a && b/2 < b)
-           {System.out.println("dasfa");}
-           else{
-               throw new NumberFormatException("Неверный ввод данных");
-           }
-        }
-        catch (CalculatorException ex){
-            throw new CalculatorException("Неверный ввод данных");
-        }
-            /*if (params[1] == null || params[2] == null) {
-
-                for (char d : params[1].toCharArray()) {
-
-                    if (Character.isDigit(d))
-
-                        for (char e : params[2].toCharArray()) {
-
-                            if (Character.isDigit(e))
-                                continue;
-                            }
-                            else{
-                        throw new CalculatorException("Неверный ввод данных");
-                    }
-
-                }
-            } else {
-                throw new CalculatorException("Неверный ввод данных");
-            }
-
-        }
-        catch (CalculatorException ex){
-            throw new CalculatorException("Неверный ввод данных");
-        }*/
-//
+        // Общая проверка на слишком большое и слишком малое число, деление на 0 и проверка арифметического знака
         try {
             double c = a + b;
-            double c1 = a - b;
-            double c2 = a / b;
+            double c1 = a / b;
+            double c2 = a - b;
             double c3 = a * b;
-            if (params[0] == "/" && b != 0 && c >= -2147483648 && c <= 2147483647) {
-                return Double.toString(c2);
-            } else if (params[0] == "+" && b != 0 && c <= 2147483647 && c >= -2147483648) {
+            if (params[0] == "+" && b != 0 && c >= -2147483648 && c <= 2147483647 ) {
                 return Double.toString(c);
-            } else if (params[0] == "-" && b != 0 && c >= -2147483648 && c <= 2147483647) {
+            } else if (params[0] == "/" && b != 0 && c <= 2147483647 && c >= -2147483648) {
                 return Double.toString(c1);
+            } else if (params[0] == "-" && b != 0 && c >= -2147483648 && c <= 2147483647) {
+                return Double.toString(c2);
             } else if (params[0] == "*" && b != 0 && c >= -2147483648 && c <= 2147483647) {
                 return Double.toString(c3);
             } else {
-                throw new CalculatorException("Ошибка ввода");
+                throw new CalculatorException("Проверьте правильность параметров");
             }
-
-            /*} catch (NumberFormatException ex) {
-                return "dfds";
-            }*/
         }
             catch (CalculatorException ex){
-                throw new CalculatorException("Второе значение не является числом");
+                throw new CalculatorException(ex.getMessage());
             }
-
-
     }
 }

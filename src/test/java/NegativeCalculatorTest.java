@@ -5,7 +5,9 @@ import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
 public class NegativeCalculatorTest extends Assert{
+
     private Calculator calc = new Calculator();
+
     @DataProvider
     public Object[][] negativeData() {
        return new Object[][]{
@@ -25,12 +27,14 @@ public class NegativeCalculatorTest extends Assert{
 
     @Test(dataProvider = "negativeData")
     public void negativeTest(String a, String b, String c) {
+
         String[] str = {a, b, c};
+
         try {
             calc.execute(str);
         }
         catch (CalculatorException e){
-           System.out.println("Неверный ввод данных");
+           System.out.println("Введены недопустимые параметры");
         }
     }
 }

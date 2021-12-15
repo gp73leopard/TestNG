@@ -22,6 +22,7 @@ public class PositiveCalculatorTest extends Assert{
 
     @Test(dataProvider = "positiveData")
     public void positiveTest(String a, String b, String c, String d) {
+
         String[] str = {a, b, c};
 
         assertEquals(Double.parseDouble(d), Double.parseDouble(calc.execute(str)));
