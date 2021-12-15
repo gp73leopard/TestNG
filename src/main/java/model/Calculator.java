@@ -4,7 +4,7 @@ public class Calculator {
     public static String execute(String[] params) {
 
         // Проверка на null
-        try {if(params[1].equals(null) || params[2].equals(null)) { throw new CalculatorException("");}}
+        try {if(params[1]==null || params[2]==null) { throw new CalculatorException("");}}
         catch (NullPointerException ex){
             throw new CalculatorException("Среди чисел есть пустое поле null");
         }
