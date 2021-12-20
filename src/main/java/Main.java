@@ -4,12 +4,6 @@ import java.util.Scanner;
 public class Main {
 
     public static void main(String[] args){
-        String[] str = mainTest();
-
-        System.out.println(Calculator.execute(str));
-    }
-
-    public static String[] mainTest(){
 
         Scanner sc = new Scanner(System.in);
 
@@ -26,8 +20,7 @@ public class Main {
                 c
         };
 
-        return str;
-
-
+        System.out.println(Calculator.execute(str));
     }
+
 }
