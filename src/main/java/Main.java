@@ -7,11 +7,11 @@ public class Main {
 
         Scanner sc = new Scanner(System.in);
 
-        System.out.print("Введите знак: ");
+        //System.out.print("Введите знак: ");
         String a = sc.nextLine();
-        System.out.print("Введите первое число: ");
+        //System.out.print("Введите первое число: ");
         String b = sc.nextLine();
-        System.out.print("Введите второе число: ");
+        //System.out.print("Введите второе число: ");
         String c = sc.nextLine();
 
         String[] str = {
