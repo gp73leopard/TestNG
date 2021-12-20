@@ -15,7 +15,7 @@ public class NegativeCalculatorTest extends Assert{
                 {"/", "-1.1", "-0.0"},
                 {"7", "9", "3"},
                 {"-", "*", "3"},
-                {"-", "!", "3"},
+                {"-", "adsf", "3"},
                 {"/", "1.1", "0"},
                 {"/", "1", "dsfas"},
                 {"/", "weqr", "dsfas"},
@@ -30,7 +30,14 @@ public class NegativeCalculatorTest extends Assert{
 
         String[] str = {a, b, c};
 
-            calc.execute(str);
+
+
+         try {
+             calc.execute(str);
+         }catch (CalculatorException e){
+             return;
+         }
+        throw new CalculatorException("Negative test");
 
     }
 }
