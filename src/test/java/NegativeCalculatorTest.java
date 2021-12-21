@@ -1,10 +1,9 @@
 import model.Calculator;
 import model.CalculatorException;
-import org.testng.Assert;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
-public class NegativeCalculatorTest extends Assert{
+public class NegativeCalculatorTest{
 
     private Calculator calc = new Calculator();
 
@@ -13,7 +12,7 @@ public class NegativeCalculatorTest extends Assert{
        return new Object[][]{
                 {"/", "7", "0"},
                 {"/", "-1.1", "-0.0"},
-                {"7", "9", "3"},
+                {"9", "9", "3"},
                 {"-", "*", "3"},
                 {"-", "adsf", "3"},
                 {"/", "1.1", "0"},
@@ -30,14 +29,12 @@ public class NegativeCalculatorTest extends Assert{
 
         String[] str = {a, b, c};
 
-
-
          try {
              calc.execute(str);
          }catch (CalculatorException e){
              return;
          }
-        throw new CalculatorException("Negative test");
+        throw new AssertionError("Negative test");
 
     }
 }
